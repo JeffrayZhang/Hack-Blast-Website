@@ -1,21 +1,81 @@
 #root {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  gap: 3rem;
+}
+
+.hero {
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 5em;
+  margin-bottom: 0.2em;
+  letter-spacing: 0.05em;
+}
+
+.hero p {
+  font-size: 1.5em;
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.info {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.info-item {
+  flex: 1;
+  min-width: 250px;
+  padding: 2em;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.info-item h3 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.info-item p {
+  font-size: 1.2em;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  height: 8em;
+  padding: 1em;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 8px 20px rgba(255, 255, 255, 0.5));
 }
+
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 8px 20px rgba(97, 218, 251, 0.6));
 }
 
 @keyframes logo-spin {
@@ -27,6 +87,15 @@
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
@@ -34,9 +103,31 @@
 }
 
 .card {
-  padding: 2em;
+  padding: 3em;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 2em 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 .read-the-docs {
-  color: #888;
+  color: #e0e7ff;
+  font-size: 0.95em;
+  margin-top: 2em;
+}
+
+code {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.2em 0.5em;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-weight: 500;
 }
